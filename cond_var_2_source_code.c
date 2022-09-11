@@ -15,7 +15,7 @@ pthread_mutex_t mtx;
 pthread_cond_t cond;
 
 int gas_pump = START_AMOUNT;
-char* make[4];
+char* vehicle[4];
 
 int main()
 {
@@ -23,15 +23,15 @@ int main()
 	pthread_mutex_init(&mtx, NULL);
 	pthread_cond_init(&cond, NULL);
 
-	make[0] = "Ford";
-	make[1] = "Chevrolet";
-	make[2] = "Dodge";
-	make[3] = "Pontiac";
+	vehicle[0] = "Ford";
+	vehicle[1] = "Chevrolet";
+	vehicle[2] = "Dodge";
+	vehicle[3] = "Pontiac";
 
 	pthread_create(&th[0], NULL, delivery_truck, NULL);
 	for (int i = 1; i < 5; i++)
 	{
-		pthread_create(&th[i], NULL, car, (void*)make[i - 1]);
+		pthread_create(&th[i], NULL, car, (void*)vehicle[i - 1]);
 	}
 
 	pthread_join(th[0], NULL);

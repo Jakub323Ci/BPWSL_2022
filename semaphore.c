@@ -16,6 +16,8 @@ int main() {
     pthread_t th[READERS];
     int i;
 
+    srand(time(NULL));
+    
     /* inicjalizacja semafora z podaniem jego wartosci poczatkowej (KEYS) */
     sem_init(&receptionist, 0, KEYS);
 
