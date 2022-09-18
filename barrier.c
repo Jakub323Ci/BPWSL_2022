@@ -13,8 +13,8 @@ pthread_barrier_t start_signal;
 
 void* horse(void* args);
 
-int main(int argc, char *argv[]) {
-	pthread_t th[15];
+int main() {
+	pthread_t th[HORSES_QTY];
 	int i;
 
     srand(time(NULL));

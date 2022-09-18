@@ -22,6 +22,7 @@ int main() {
     sem_init(&receptionist, 0, KEYS);
 
     for (i = 0; i < READERS; i++) {
+        /* zmienna do przekazania nr-u watku jako argument funkcji obslugujacej go */
         int* a = malloc(sizeof(int));
         *a = i;
 

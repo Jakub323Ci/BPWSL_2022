@@ -11,10 +11,7 @@ Na komputerze z systemem operacyjnym z jądrem Linux:
 `git clone https://github.com/Jakub323Ci/BPWSL_2022`
 - Wejść do folderu z repozytorium: 
 `cd BPWSL_2022`
-- Aby skompilować wybrany program należy użyć następującego polecenia: 
-`gcc <wybrany_plik_z_kodem_zrodlowym.c> -o <nazwa_pliku_wykonywalnego> -lpthread`
-na przykład: 
-`gcc cond_var_2.c -o cond_var_2 -lpthread`
+- Aby skompilować wybrany program należy użyć następującego polecenia: `gcc <wybrany_plik_z_kodem_zrodlowym.c> -o <nazwa_pliku_wykonywalnego> -lpthread` na przykład: `gcc cond_var_2.c -o cond_var_2 -lpthread`. W przypadku programu z semaforami dodatkowo należy dodać opcję `-lrt`.
 - Uruchomić program w następujący sposób: `./<nazwa_pliku_wykonywalnego>`, np. `./cond_var_2`
 
 ## Alternatywny sposób (sposób 2)
