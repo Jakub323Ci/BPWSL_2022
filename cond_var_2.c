@@ -29,21 +29,17 @@ int main()
 	vehicle[3] = "Pontiac";
 
 	pthread_create(&th[0], NULL, delivery_truck, NULL);
+
 	for (int i = 1; i < 5; i++)
 	{
 		pthread_create(&th[i], NULL, car, (void*)vehicle[i - 1]);
 	}
 
-	pthread_join(th[0], NULL);
-	printf("\nthread 0: delivery_truck -	finished\n");
-	pthread_join(th[1], NULL);
-	printf("thread 1: ford -		finished\n");
-	pthread_join(th[2], NULL);
-	printf("thread 2: chevrolet -		finished\n");
-	pthread_join(th[3], NULL); 
-	printf("thread 3: pontiac -		finished\n");
-	pthread_join(th[4], NULL);
-	printf("thread 4: dodge -		finished\n");
+	for (int i = 0; i < 5; i++) {
+		pthread_join(th[i], NULL);
+	}
+
+	printf("\nthreads finished their job\n");
 
 	pthread_mutex_destroy(&mtx);
 	pthread_cond_destroy(&cond);
